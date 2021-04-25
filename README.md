@@ -22,6 +22,30 @@
   * [Official Docs](https://docs.datadoghq.com/)
   * [Official Github](https://github.com/DataDog)
 
+## Requirements
+* Google Cloud SDK + gcloud CLI;
+* Datadog account + Apikey;
+
+## Usage
+
+```
+gcloud auth login
+gcloud components update
+gcloud config set project <my-project>
+gcloud container clusters create my-cluster-datadog --zone southamerica-east1-a --project <my-project>
+```
+
+```
+helm repo add datadog https://helm.datadoghq.com
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+kubectl create namespace datadog
+```
+
+```
+helm install tadeu-teste-datadog -f values.yml -n datadog --set datadog.site='datadoghq.com' --set datadog.apiKey=myapikeyec747bdd2b92a3fc42345678 datadog/datadog
+```
+
 ## Author
 
 👤 **Tadeu Bernacchi**
