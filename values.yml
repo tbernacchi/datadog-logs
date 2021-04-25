@@ -1,7 +1,7 @@
 datadog:
   clusterName: tadeu-datadog-teste
 
-  apiKey: 17971e340e57c747bdd2b92a3fc428ea
+  apiKey: myapikeyec747bdd2b92a3fc42345678
   logs:
     enabled: true
     containerCollectAll: true

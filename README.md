@@ -7,7 +7,7 @@
 ![Datadog](/.github/assets/img/datadog-logo.png)
 
 <div align=>
-	<img align="center" width="200px" src=/.github/assets/img/gke-logo.png>
+	<img align="center" width="400px" src=/.github/assets/img/gke-logo.png>
 </div>
 
 ## Table of Contents
