@@ -1,0 +1,58 @@
+datadog:
+  clusterName: tadeu-datadog-teste
+
+  apiKey: 17971e340e57c747bdd2b92a3fc428ea
+  logs:
+    enabled: true
+    containerCollectAll: true
+  apm:
+    enabled: true
+  nonLocalTraffic: true
+
+  processAgent:
+    enabled: true
+    processCollection: true
+
+  collectEvents: true
+
+  clusterChecks:
+    enabled: true
+
+agents:
+  rbac:
+    create: true
+  containers:
+    traceAgent:
+      env:
+        - name: "DD_APM_IGNORE_RESOURCES"
+          value: "GET .*/healthcheck"
+
+  useConfigMap: true
+
+  customAgentConfig:
+    logs_config:
+      open_files_limit: 500
+
+    ### default
+    listeners:
+      - name: kubelet
+    config_providers:
+      - name: kubelet
+        polling: true
+      # needed to support legacy docker label config templates
+      - name: docker
+        polling: true
+        poll_interval: 5s
+
+    apm_config:
+      apm_non_local_traffic: true
+      max_memory: 0
+      max_cpu_percent: 0
+
+targetSystem: linux
+
+daemonset:
+  useHostPort: true
+
+clusterChecksRunner:
+  enabled: true
