@@ -23,7 +23,10 @@
   * [Official Github](https://github.com/DataDog)
 
 ## Requirements
-* Google Cloud SDK + gcloud CLI + kubectl + helm;
+* Google Cloud SDK;
+* gcloud CLI;  
+* kubectl;  
+* helm;
 * Datadog account + Apikey;
 
 ## Usage
